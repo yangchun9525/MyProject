@@ -62,6 +62,8 @@ cat.says('hello') //cat says hello
 export default {
   data() {
     return {
+      loading: false,
+      scroller: null,
       response: '1111',
       contentlist: [],
       allPages: ''

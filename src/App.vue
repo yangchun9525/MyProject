@@ -23,6 +23,10 @@
     <router-link to="/Hello">
       <h2>Hello</h2>
     </router-link>
+
+    <router-link to="/museui">
+      <h2>museui</h2>
+    </router-link>
     <router-view></router-view>
   </div>
 </template>

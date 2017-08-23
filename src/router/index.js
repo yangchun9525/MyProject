@@ -5,8 +5,12 @@ import chart from '@/components/chart'
 import test from '@/components/test'
 import DriverList from '@/components/DriverList'
 import DriverEntry from '@/components/DriverEntry'
+import museui from '@/components/museui'
 import login from '@/components/login'
+import MuseUI from 'muse-ui'
+import 'muse-ui/dist/muse-ui.css'
 
+Vue.use(MuseUI)
 Vue.use(Router)
 
 export default new Router({
@@ -39,6 +43,11 @@ export default new Router({
       path: '/DriverList',
       name: 'DriverList',
       component: DriverList
+    },
+    {
+      path: '/museui',
+      name: 'museui',
+      component: museui
     }
   ]
 })
