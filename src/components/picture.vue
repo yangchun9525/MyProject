@@ -1,17 +1,43 @@
 
 <template>
-  <div class="demo-infinite-container">
-    <mu-list>
-      <template v-for="item in contentlist">
-        <mu-list-item >
+<div class="demo-infinite-container">
+  <!-- <mu-tabs :value="activeTab" @change="handleTabChange" class="view-tabs">
+    <mu-tab value="rage" title="图片" />
+    <mu-tab value="songList" title="视频" />
+    <mu-tab value="leaderBoard" title="段子" />
+  </mu-tabs> -->
+  <mu-list>
+    <template v-for="item in contentlist">
+        <mu-list-item>
+          <!-- <mu-avatar :src="item.profile_image" slot="leftAvatar"/> -->
+          <!-- :title="item.name"
           <img class="list-img img-response" :src="item.profile_image" lazy="loading">
-          {{ item.text }}
+          <div class="list-name">{{item.text}}</div> -->
+          <div>
+            <div class="title">
+              <span style="height:35px">
+                <img class="head-img" :src="item.profile_image"></img>
+              </span>
+
+              <div style="height:35px">
+                <h2>{{ item.name }}</h2>
+              </div>
+
+              <div style="margin-left:45px;margin-top:15px;">
+                <h2>{{ item.text }}</h2>
+              </div>
+
+              <div>
+                <img class="content-img" :src="item.cdn_img"></img>
+              </div>
+            </div>
+          </div>
         </mu-list-item>
         <mu-divider/>
       </template>
-    </mu-list>
-    <mu-infinite-scroll :scroller="scroller" :loading="loading" @load="loadMore"/>
-  </div>
+  </mu-list>
+  <mu-infinite-scroll :scroller="scroller" :loading="loading" @load="loadMore" />
+</div>
 </template>
 <script>
 import axios from 'axios';
@@ -56,7 +82,7 @@ export default {
 
     }
   },
-  mounted () {
+  mounted() {
     this.scroller = this.$el;
     this.$http({
       url: util.commonUrl,
@@ -86,5 +112,39 @@ export default {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   border: 1px solid #d9d9d9;
+}
+
+.title {
+  margin: 0 0 17px;
+  clear: both;
+}
+
+.title a,
+.title span {
+  float: left;
+  font-size: 14px;
+  font-weight: 700;
+  /*line-height: 35px;*/
+}
+
+.head-img {
+  width: 35px;
+  height: 35px;
+  border-radius: 55px;
+  padding: 0;
+  margin-right: 10px;
+}
+
+.content-img{
+  width: 90%;
+  padding: 0;
+  margin-top: 20px;
+  margin-right: 45px;
+  margin-left:45px;
+}
+
+.view-tabs {
+  background-color: #000000;
+  /*color: rgba(0,0,0,.87);*/
 }
 </style>

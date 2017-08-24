@@ -24,8 +24,12 @@
       <h2>Hello</h2>
     </router-link>
 
-    <router-link to="/museui">
-      <h2>museui</h2>
+    <router-link to="/picture">
+      <h2>picture222</h2>
+    </router-link>
+
+    <router-link to="/video">
+      <h2>video</h2>
     </router-link>
     <router-view></router-view>
   </div>

@@ -5,8 +5,9 @@ import chart from '@/components/chart'
 import test from '@/components/test'
 import DriverList from '@/components/DriverList'
 import DriverEntry from '@/components/DriverEntry'
-import museui from '@/components/museui'
+import picture from '@/components/picture'
 import login from '@/components/login'
+import video from '@/components/video'
 import MuseUI from 'muse-ui'
 import 'muse-ui/dist/muse-ui.css'
 
@@ -45,9 +46,14 @@ export default new Router({
       component: DriverList
     },
     {
-      path: '/museui',
-      name: 'museui',
-      component: museui
+      path: '/picture',
+      name: 'picture',
+      component: picture
+    },
+    {
+      path: '/video',
+      name: 'video',
+      component: video
     }
   ]
 })

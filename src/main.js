@@ -7,8 +7,6 @@ import router from './router'
 import iView from 'iview';
 import VueResource from 'vue-resource';
 import VueRouter from 'vue-router';
-import chart from '@/components/chart';
-import Hello from '@/components/Hello';
 import axios from 'axios';
 import util from './fetch/api';
 
