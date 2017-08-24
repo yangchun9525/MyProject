@@ -8,6 +8,7 @@ import DriverEntry from '@/components/DriverEntry'
 import picture from '@/components/picture'
 import login from '@/components/login'
 import video from '@/components/video'
+import text from '@/components/text'
 import MuseUI from 'muse-ui'
 import 'muse-ui/dist/muse-ui.css'
 
@@ -54,6 +55,11 @@ export default new Router({
       path: '/video',
       name: 'video',
       component: video
+    },
+    {
+      path: '/text',
+      name: 'text',
+      component: text
     }
   ]
 })
