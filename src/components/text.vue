@@ -24,7 +24,7 @@
               </div>
 
               <div style="margin-left:45px;margin-top:15px;">
-                <h2>{{ item.text }}</h2>
+                <h2>{{ item.text }} 11</h2>
               </div>
 
             </div>
