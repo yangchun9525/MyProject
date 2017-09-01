@@ -35,6 +35,10 @@
     <router-link to="/text">
       <h2>text</h2>
     </router-link>
+
+    <router-link to="/testvideo">
+      <h2>testvideo</h2>
+    </router-link>
     <router-view></router-view>
   </div>
 </template>

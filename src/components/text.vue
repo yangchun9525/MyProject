@@ -20,11 +20,11 @@
               </span>
 
               <div style="height:35px">
-                <h2>{{ item.name }} dsss</h2>
+                <h2>{{ item.name }}</h2>
               </div>
 
               <div style="margin-left:45px;margin-top:15px;">
-                <h2>{{ item.text }} 11</h2>
+                <h2>{{ item.text }}</h2>
               </div>
 
             </div>

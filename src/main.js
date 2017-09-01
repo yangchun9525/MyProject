@@ -9,14 +9,21 @@ import VueResource from 'vue-resource';
 import VueRouter from 'vue-router';
 import axios from 'axios';
 import util from './fetch/api';
+import VueVideoPlayer from 'vue-video-player';
+import VueDPlayer from 'vue-dplayer';
 
 Vue.use(VueRouter);
 
 Vue.use(VueResource);
 Vue.use(iView);
 Vue.use(Vuex);
+Vue.use(VueVideoPlayer);
+Vue.use(VueDPlayer);
 
 Vue.config.productionTip = false
+
+require('video.js/dist/video-js.css');
+require('vue-video-player/src/custom-theme.css');
 
 const store = new Vuex.Store({
   state: {
