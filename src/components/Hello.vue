@@ -1,7 +1,7 @@
 
 <template>
 <div id="loginIn" class="imgtest">
-  <h2>testtest1111</h2>
+  <h2>testtest22222222</h2>
   <!-- <p >
         {{response}}
       </p>
@@ -102,7 +102,7 @@ export default {
       console.log("11111111111111111111111:");
     }).catch(function(response) {
       console.log(response);
-    })
+    }),
     // axios.get('http://route.showapi.com/255-1',{
     //   params:{
     //     showapi_appid: '17899',
@@ -133,13 +133,13 @@ export default {
     //    console.log(err);
     //  });
 
-    // axios.get('localhost:8080/movie/top250?start=7').then(response1 => {
-    //   console.log("555555555555555555333333333:");
-    //   console.log(response1);
-    //   console.log("5555555555555555553333333333:");
-    // }).catch(function(err) {
-    //   console.log(err);
-    // });
+    axios.get('movie/top250?start=7').then(response1 => {
+      console.log("555555555555555555333333333:");
+      console.log(response1);
+      console.log("5555555555555555553333333333:");
+    }).catch(function(err) {
+      console.log(err);
+    });
 
     // axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded';
     // axios.get('apitest/movie/top250?start=7').then(response1 => {
