@@ -39,6 +39,10 @@
     <router-link to="/testvideo">
       <h2>testvideo</h2>
     </router-link>
+
+    <router-link to="/OperationalSystem">
+      <h2>OperationalSystem</h2>
+    </router-link>
     <router-view></router-view>
   </div>
 </template>

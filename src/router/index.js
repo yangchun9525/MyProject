@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Hello from '@/components/Hello'
 import chart from '@/components/chart'
 import test from '@/components/test'
+import OperationalSystem from '@/components/OperationalSystem'
 import DriverList from '@/components/DriverList'
 import DriverEntry from '@/components/DriverEntry'
 import picture from '@/components/picture'
@@ -66,6 +67,11 @@ export default new Router({
       path: '/testvideo',
       name: 'testvideo',
       component: testvideo
+    },
+    {
+      path: '/OperationalSystem',
+      name: 'OperationalSystem',
+      component: OperationalSystem
     }
   ]
 })
