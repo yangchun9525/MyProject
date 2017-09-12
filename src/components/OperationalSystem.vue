@@ -128,7 +128,7 @@
             selectOrderViewType(name) {
                 switch (name) {
                     case "1-1":
-                        this.$router.push('/OperationalSystem/CarOrderPanel')
+                        this.$router.push('/Chart')
                         break
                     case "1-2":
                         this.$router.push('/OperationalSystem/OperationOverview')
