@@ -24,9 +24,11 @@
       <h2>Hello</h2>
     </router-link>
 
-    <router-link to="/picture">
+    <!-- <router-link to="/picture">
       <h2>picture222</h2>
-    </router-link>
+    </router-link> -->
+
+    <i-button type="primary" @click="toPicture">picture222</i-button>
 
     <router-link to="/video">
       <h2>video</h2>
@@ -48,6 +50,11 @@
 </template>
 <script>
 export default {
-	name: 'app'
+	name: 'app',
+  methods:{
+    toPicture(){
+      this.$router.push('/picture')
+    }
+  }
 }
 </script>

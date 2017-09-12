@@ -1,18 +1,17 @@
 
 <template>
-<div class="demo-infinite-container">
-  <!-- <mu-tabs :value="activeTab" @change="handleTabChange" class="view-tabs">
+<!-- <div class="demo-infinite-container"> -->
+<!-- <mu-tabs :value="activeTab" @change="handleTabChange" class="view-tabs">
     <mu-tab value="rage" title="图片" />
     <mu-tab value="songList" title="视频" />
     <mu-tab value="leaderBoard" title="段子" />
   </mu-tabs> -->
-  <mu-list>
+<!-- <mu-list>
     <template v-for="item in contentlist">
         <mu-list-item>
-          <!-- <mu-avatar :src="item.profile_image" slot="leftAvatar"/> -->
-          <!-- :title="item.name"
+          <mu-avatar :src="item.profile_image" slot="leftAvatar"/>
           <img class="list-img img-response" :src="item.profile_image" lazy="loading">
-          <div class="list-name">{{item.text}}</div> -->
+          <div class="list-name">{{item.text}}</div>
           <div>
             <div class="title">
               <span style="height:35px">
@@ -36,8 +35,39 @@
         <mu-divider/>
       </template>
   </mu-list>
-  <mu-infinite-scroll :scroller="scroller" :loading="loading" @load="loadMore" />
+  <mu-infinite-scroll :scroller="scroller" :loading="loading" @load="loadMore" /> -->
+<div>
+  <scroller :on-refresh="refresh"
+            :on-infinite="loadMore"
+            style="padding-top: 44px;">
+   <!-- <mu-refresh-control :refreshing="refreshing" :trigger="trigger" @refresh="refresh"/> -->
+   <ul v-for="item in contentlist">
+      <li>
+        <div>
+          <div class="title">
+            <span style="height:35px">
+              <img class="head-img" :src="item.profile_image"></img>
+            </span>
+
+            <div style="height:35px">
+              <h2>{{ item.name }}</h2>
+            </div>
+
+            <div style="margin-left:45px;margin-top:15px;">
+              <h2>{{ item.text }}</h2>
+            </div>
+
+            <div>
+              <img class="content-img" :src="item.cdn_img"></img>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+   <!-- <mu-infinite-scroll :scroller="scroller" :loading="loading" @load="loadMore" /> -->
+  </scroller>
 </div>
+<!-- </div> -->
 </template>
 <script>
 import axios from 'axios';
@@ -46,6 +76,8 @@ import util from '../fetch/api';
 export default {
   data() {
     return {
+      refreshing: false,
+      trigger: null,
       loading: false,
       scroller: null,
       response: '1111',
@@ -54,6 +86,11 @@ export default {
     }
   },
   methods: {
+    refresh() {
+      this.refreshing = true;
+      this.loadMore();
+       this.refreshing = false;
+    },
     loadMore() {
       this.loading = true;
       this.$http({
@@ -83,6 +120,7 @@ export default {
     }
   },
   mounted() {
+    this.trigger = this.$el;
     this.scroller = this.$el;
     this.$http({
       url: util.commonUrl,
@@ -107,11 +145,13 @@ export default {
 </script>
 <style lang="css">
 .demo-infinite-container{
-  /*width: 256px;*/
+  width: 100%;
   /*height: 300px;*/
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   border: 1px solid #d9d9d9;
+  position: relative;
+  user-select: none;
 }
 
 .title {

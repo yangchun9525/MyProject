@@ -131,7 +131,7 @@
                         this.$router.push('/Chart')
                         break
                     case "1-2":
-                        this.$router.push('/OperationalSystem/OperationOverview')
+                        this.$router.push('/picture')
                         break
                     case "1-3":
                         this.$router.push('/OperationalSystem/chart')

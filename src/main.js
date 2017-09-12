@@ -11,9 +11,10 @@ import axios from 'axios';
 import util from './fetch/api';
 import VueVideoPlayer from 'vue-video-player';
 import VueDPlayer from 'vue-dplayer';
+import VueScroller from 'vue-scroller'
 
 Vue.use(VueRouter);
-
+Vue.use(VueScroller);
 Vue.use(VueResource);
 Vue.use(iView);
 Vue.use(Vuex);
