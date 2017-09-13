@@ -11,10 +11,11 @@ import axios from 'axios';
 import util from './fetch/api';
 import VueVideoPlayer from 'vue-video-player';
 import VueDPlayer from 'vue-dplayer';
-import VueScroller from 'vue-scroller'
+import MintUI from 'mint-ui';
+import 'mint-ui/lib/style.css';
 
+Vue.use(MintUI);
 Vue.use(VueRouter);
-Vue.use(VueScroller);
 Vue.use(VueResource);
 Vue.use(iView);
 Vue.use(Vuex);

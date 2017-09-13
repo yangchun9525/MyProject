@@ -19,7 +19,8 @@
     "vue-dplayer": "0.0.3",
     "vue-router": "^2.3.1",
     "vue-video-player": "^4.0.3",
-    "vuex": "^2.3.1"
+    "vuex": "^2.3.1",
+    "vue-scroller": "^2.2.0"
   },
   "devDependencies": {
     "autoprefixer-loader": "^2.0.0",

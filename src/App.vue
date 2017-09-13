@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-link to="/chart">
+    <!-- <router-link to="/chart">
       <h2>chart</h2>
     </router-link>
 
@@ -24,11 +24,9 @@
       <h2>Hello</h2>
     </router-link>
 
-    <!-- <router-link to="/picture">
+    <router-link to="/picture">
       <h2>picture222</h2>
-    </router-link> -->
-
-    <i-button type="primary" @click="toPicture">picture222</i-button>
+    </router-link>
 
     <router-link to="/video">
       <h2>video</h2>
@@ -44,7 +42,19 @@
 
     <router-link to="/OperationalSystem">
       <h2>OperationalSystem</h2>
-    </router-link>
+    </router-link> -->
+
+    <i-button type="primary" @click="toChart">chart</i-button>
+    <i-button type="primary" @click="toTest">test</i-button>
+    <i-button type="primary" @click="toDriverEntry">DriverEntry</i-button>
+    <i-button type="primary" @click="toDriverList">DriverList</i-button>
+    <i-button type="primary" @click="toLogin">login</i-button>
+    <i-button type="primary" @click="toHello">Hello</i-button>
+    <i-button type="primary" @click="toPicture">picture222</i-button>
+    <i-button type="primary" @click="toVideo">video</i-button>
+    <i-button type="primary" @click="toText">text</i-button>
+    <i-button type="primary" @click="toTestvideo">testvideo</i-button>
+    <i-button type="primary" @click="toOperationalSystem">OperationalSystem</i-button>
     <router-view></router-view>
   </div>
 </template>
@@ -54,6 +64,36 @@ export default {
   methods:{
     toPicture(){
       this.$router.push('/picture')
+    },
+    toTest(){
+      this.$router.push('/test')
+    },
+    toDriverEntry(){
+      this.$router.push('/DriverEntry')
+    },
+    toDriverList(){
+      this.$router.push('/DriverList')
+    },
+    toLogin(){
+      this.$router.push('/login')
+    },
+    toHello(){
+      this.$router.push('/Hello')
+    },
+    toChart(){
+      this.$router.push('/chart')
+    },
+    toVideo(){
+      this.$router.push('/video')
+    },
+    toText(){
+      this.$router.push('/text')
+    },
+    toTestvideo(){
+      this.$router.push('/testvideo')
+    },
+    toOperationalSystem(){
+      this.$router.push('/OperationalSystem')
     }
   }
 }

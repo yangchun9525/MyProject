@@ -1,71 +1,31 @@
 
 <template>
-<!-- <div class="demo-infinite-container"> -->
-<!-- <mu-tabs :value="activeTab" @change="handleTabChange" class="view-tabs">
-    <mu-tab value="rage" title="图片" />
-    <mu-tab value="songList" title="视频" />
-    <mu-tab value="leaderBoard" title="段子" />
-  </mu-tabs> -->
-<!-- <mu-list>
-    <template v-for="item in contentlist">
-        <mu-list-item>
-          <mu-avatar :src="item.profile_image" slot="leftAvatar"/>
-          <img class="list-img img-response" :src="item.profile_image" lazy="loading">
-          <div class="list-name">{{item.text}}</div>
-          <div>
-            <div class="title">
-              <span style="height:35px">
-                <img class="head-img" :src="item.profile_image"></img>
-              </span>
+<div >
+  <mt-loadmore :top-method="refresh" :bottom-method="loadMore" ref="loadmore">
+  <ul v-for="item in contentlist">
+    <li>
+      <div>
+        <div class="title">
+          <span style="height:35px">
+            <img class="head-img" :src="item.profile_image"></img>
+          </span>
 
-              <div style="height:35px">
-                <h2>{{ item.name }}</h2>
-              </div>
-
-              <div style="margin-left:45px;margin-top:15px;">
-                <h2>{{ item.text }}</h2>
-              </div>
-
-              <div>
-                <img class="content-img" :src="item.cdn_img"></img>
-              </div>
-            </div>
+          <div style="height:35px">
+            <h2>{{ item.name }}</h2>
           </div>
-        </mu-list-item>
-        <mu-divider/>
-      </template>
-  </mu-list>
-  <mu-infinite-scroll :scroller="scroller" :loading="loading" @load="loadMore" /> -->
-<div>
-  <scroller :on-refresh="refresh"
-            :on-infinite="loadMore"
-            style="padding-top: 44px;">
-   <!-- <mu-refresh-control :refreshing="refreshing" :trigger="trigger" @refresh="refresh"/> -->
-   <ul v-for="item in contentlist">
-      <li>
-        <div>
-          <div class="title">
-            <span style="height:35px">
-              <img class="head-img" :src="item.profile_image"></img>
-            </span>
 
-            <div style="height:35px">
-              <h2>{{ item.name }}</h2>
-            </div>
+          <div style="margin-left:45px;margin-top:15px;">
+            <h2>{{ item.text }}</h2>
+          </div>
 
-            <div style="margin-left:45px;margin-top:15px;">
-              <h2>{{ item.text }}</h2>
-            </div>
-
-            <div>
-              <img class="content-img" :src="item.cdn_img"></img>
-            </div>
+          <div>
+            <img class="content-img" :src="item.cdn_img"></img>
           </div>
         </div>
-      </li>
-    </ul>
-   <!-- <mu-infinite-scroll :scroller="scroller" :loading="loading" @load="loadMore" /> -->
-  </scroller>
+      </div>
+    </li>
+  </ul>
+</mt-loadmore>
 </div>
 <!-- </div> -->
 </template>
@@ -90,6 +50,7 @@ export default {
       this.refreshing = true;
       this.loadMore();
        this.refreshing = false;
+       this.$refs.loadmore.onTopLoaded();
     },
     loadMore() {
       this.loading = true;
@@ -110,6 +71,7 @@ export default {
         }
         // this.contentlist.push(response.body.showapi_res_body.pagebean.contentlist);
         this.loading = false;
+          this.$refs.loadmore.onBottomLoaded();
         console.log("11111111111111111111111:");
         console.log(response);
         console.log("11111111111111111111111:");
@@ -177,6 +139,7 @@ export default {
 
 .content-img{
   width: 90%;
+  /*height: 50px;*/
   padding: 0;
   margin-top: 20px;
   margin-right: 45px;
