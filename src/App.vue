@@ -55,6 +55,7 @@
     <i-button type="primary" @click="toText">text</i-button>
     <i-button type="primary" @click="toTestvideo">testvideo</i-button>
     <i-button type="primary" @click="toOperationalSystem">OperationalSystem</i-button>
+    <i-button type="primary" @click="toJsInteractive">jsInteractive</i-button>
     <router-view></router-view>
   </div>
 </template>
@@ -62,6 +63,9 @@
 export default {
 	name: 'app',
   methods:{
+    toJsInteractive(){
+      this.$router.push('/jsInteractive')
+    },
     toPicture(){
       this.$router.push('/picture')
     },

@@ -11,6 +11,7 @@ import login from '@/components/login'
 import video from '@/components/video'
 import text from '@/components/text'
 import testvideo from '@/components/testvideo'
+import jsInteractive from '@/components/jsInteractive'
 import MuseUI from 'muse-ui'
 import 'muse-ui/dist/muse-ui.css'
 
@@ -72,6 +73,11 @@ export default new Router({
       path: '/OperationalSystem',
       name: 'OperationalSystem',
       component: OperationalSystem
+    },
+    {
+      path: '/jsInteractive',
+      name: 'jsInteractive',
+      component: jsInteractive
     }
   ]
 })
