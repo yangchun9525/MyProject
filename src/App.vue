@@ -43,7 +43,6 @@
     <router-link to="/OperationalSystem">
       <h2>OperationalSystem</h2>
     </router-link> -->
-
     <i-button type="primary" @click="toChart">chart</i-button>
     <i-button type="primary" @click="toTest">test</i-button>
     <i-button type="primary" @click="toDriverEntry">DriverEntry</i-button>

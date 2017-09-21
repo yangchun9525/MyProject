@@ -30,11 +30,11 @@ module.exports = {
     assetsPublicPath: '/',
     // assetsPublicPath: './',
     proxyTable: {
-      '/movie': {
-        target: 'https://api.douban.com/',
+      '/douban': {
+        target: 'https://api.douban.com/v2',
         changeOrigin: true,
         pathRewrite: {
-          '^/movie': '/movie'
+          '^/douban': '/'
         }
       }
     },

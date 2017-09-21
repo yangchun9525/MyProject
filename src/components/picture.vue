@@ -1,31 +1,33 @@
 
 <template>
-<div >
+<div>
+  When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and they are
+$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
   <mt-loadmore :top-method="refresh" :bottom-method="loadMore" ref="loadmore">
-  <ul v-for="item in contentlist">
-    <li>
-      <div>
-        <div class="title">
-          <span style="height:35px">
+    <ul v-for="item in contentlist">
+      <li>
+        <div>
+          <div class="title">
+            <span style="height:35px">
             <img class="head-img" :src="item.profile_image"></img>
           </span>
 
-          <div style="height:35px">
-            <h2>{{ item.name }}</h2>
-          </div>
+            <div style="height:35px">
+              <h2>{{ item.name }}</h2>
+            </div>
 
-          <div style="margin-left:45px;margin-top:15px;">
-            <h2>{{ item.text }}</h2>
-          </div>
+            <div style="margin-left:45px;margin-top:15px;">
+              <h2>{{ item.text }}</h2>
+            </div>
 
-          <div>
-            <img class="content-img" :src="item.cdn_img"></img>
+            <div>
+              <img class="content-img" :src="item.cdn_img"></img>
+            </div>
           </div>
         </div>
-      </div>
-    </li>
-  </ul>
-</mt-loadmore>
+      </li>
+    </ul>
+  </mt-loadmore>
 </div>
 <!-- </div> -->
 </template>
@@ -49,8 +51,8 @@ export default {
     refresh() {
       this.refreshing = true;
       this.loadMore();
-       this.refreshing = false;
-       this.$refs.loadmore.onTopLoaded();
+      this.refreshing = false;
+      this.$refs.loadmore.onTopLoaded();
     },
     loadMore() {
       this.loading = true;
@@ -71,7 +73,7 @@ export default {
         }
         // this.contentlist.push(response.body.showapi_res_body.pagebean.contentlist);
         this.loading = false;
-          this.$refs.loadmore.onBottomLoaded();
+        this.$refs.loadmore.onBottomLoaded();
         console.log("11111111111111111111111:");
         console.log(response);
         console.log("11111111111111111111111:");

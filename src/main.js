@@ -29,7 +29,8 @@ require('vue-video-player/src/custom-theme.css');
 
 const store = new Vuex.Store({
   state: {
-    contentlist: []
+    contentlist: [],
+    text:''
   },
   actions: {
     LOAD_BUDEJIE_DATA: function({
@@ -74,14 +75,25 @@ const store = new Vuex.Store({
       }).catch(function(err) {
         console.log(err);
       })
+    },
+    SET_TEXT: function({
+      commit
+    }){
+      commit('SET_TEXT_DATA', {
+        text: 'testtest'
+      })
     }
-
   },
   mutations: {
     SET_BUDEJIE_DATA: (state, {
       data
     }) => {
       state.contentlist = data
+    },
+    SET_TEXT_DATA: (state, {
+      text
+    }) => {
+      state.text = text
     }
   },
   getters: {
@@ -91,6 +103,11 @@ const store = new Vuex.Store({
   }
 })
 
+window.callByAndroid = function(){
+  alert("Js收到消息11");
+  store.dispatch('SET_TEXT');
+  // this.text = 'Js收到消息-->无参方法callByAndroid被调用';
+}
 // mount
 var vm = new Vue({
   el: '#app',
