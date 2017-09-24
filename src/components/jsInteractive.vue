@@ -7,6 +7,7 @@
 <script>
 import Vue from 'vue';
 import axios from 'axios';
+// import $jsonp from 'vue-jsonp';
 import {
   mapState,
   mapGetters
@@ -42,15 +43,24 @@ export default {
   },
   created() {
     // axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded';
-    var url = 'https://api.douban.com/v2/book/1220562';
-    this.$ajax({
-      url: '/douban/book/1220562',
-      method: 'get'
-    }).then(function(data) {
-      console.log(data)
-    }).catch(function(err) {
-      console.log(err)
+    this.$jsonp('https://api.douban.com/v2/book/1220562').then(data => {
+      console.log(data);
+    }).map(item => {
+      return {
+        url: item.link,
+        img: item.pico[0].url,
+        title: item.title
+      }
     })
+    // var url = 'https://api.douban.com/v2/book/1220562';
+    // this.$ajax({
+    //   url: '/douban/book/1220562',
+    //   method: 'get'
+    // }).then(function(data) {
+    //   console.log(data)
+    // }).catch(function(err) {
+    //   console.log(err)
+    // })
     // this.$http({
     //   url: 'https://api.douban.com/v2/book/1220562',
     //   method: 'GET'

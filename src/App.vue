@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <!-- <router-link to="/chart">
+<div id="app">
+  <!-- <router-link to="/chart">
       <h2>chart</h2>
     </router-link>
 
@@ -43,59 +43,59 @@
     <router-link to="/OperationalSystem">
       <h2>OperationalSystem</h2>
     </router-link> -->
-    <i-button type="primary" @click="toChart">chart</i-button>
-    <i-button type="primary" @click="toTest">test</i-button>
-    <i-button type="primary" @click="toDriverEntry">DriverEntry</i-button>
-    <i-button type="primary" @click="toDriverList">DriverList</i-button>
-    <i-button type="primary" @click="toLogin">login</i-button>
-    <i-button type="primary" @click="toHello">Hello</i-button>
-    <i-button type="primary" @click="toPicture">picture222</i-button>
-    <i-button type="primary" @click="toVideo">video</i-button>
-    <i-button type="primary" @click="toText">text</i-button>
-    <i-button type="primary" @click="toTestvideo">testvideo</i-button>
-    <i-button type="primary" @click="toOperationalSystem">OperationalSystem</i-button>
-    <i-button type="primary" @click="toJsInteractive">jsInteractive</i-button>
-    <router-view></router-view>
-  </div>
+  <i-button type="primary" @click="toChart">chart</i-button>
+  <i-button type="primary" @click="toTest">test</i-button>
+  <i-button type="primary" @click="toDriverEntry">DriverEntry</i-button>
+  <i-button type="primary" @click="toDriverList">DriverList</i-button>
+  <i-button type="primary" @click="toLogin">login</i-button>
+  <i-button type="primary" @click="toHello">Hello</i-button>
+  <i-button type="primary" @click="toPicture">picture222</i-button>
+  <i-button type="primary" @click="toVideo">video</i-button>
+  <i-button type="primary" @click="toText">text</i-button>
+  <i-button type="primary" @click="toTestvideo">testvideo</i-button>
+  <i-button type="primary" @click="toOperationalSystem">OperationalSystem</i-button>
+  <i-button type="primary" @click="toJsInteractive">jsInteractive</i-button>
+  <router-view></router-view>
+</div>
 </template>
 <script>
 export default {
-	name: 'app',
-  methods:{
-    toJsInteractive(){
+  name: 'app',
+  methods: {
+    toJsInteractive() {
       this.$router.push('/jsInteractive')
     },
-    toPicture(){
+    toPicture() {
       this.$router.push('/picture')
     },
-    toTest(){
+    toTest() {
       this.$router.push('/test')
     },
-    toDriverEntry(){
+    toDriverEntry() {
       this.$router.push('/DriverEntry')
     },
-    toDriverList(){
+    toDriverList() {
       this.$router.push('/DriverList')
     },
-    toLogin(){
+    toLogin() {
       this.$router.push('/login')
     },
-    toHello(){
+    toHello() {
       this.$router.push('/Hello')
     },
-    toChart(){
+    toChart() {
       this.$router.push('/chart')
     },
-    toVideo(){
+    toVideo() {
       this.$router.push('/video')
     },
-    toText(){
+    toText() {
       this.$router.push('/text')
     },
-    toTestvideo(){
+    toTestvideo() {
       this.$router.push('/testvideo')
     },
-    toOperationalSystem(){
+    toOperationalSystem() {
       this.$router.push('/OperationalSystem')
     }
   }

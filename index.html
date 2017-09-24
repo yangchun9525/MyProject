@@ -25,15 +25,15 @@
   <!-- built files will be auto injected -->
 </body>
 <script type="text/javascript">
-  function sendHelloToAndroid() {
-    // body...
-    //console.log("call android")
-    if (window.android != null && typeof(window.android) != "undefined") {
-      window.android.callAndroid("你好，Android! ");
-    } else {
-      alert(typeof(window.android));
-    }
-  }
+  // function sendHelloToAndroid() {
+  //   // body...
+  //   //console.log("call android")
+  //   if (window.android != null && typeof(window.android) != "undefined") {
+  //     window.android.callAndroid("你好，Android! ");
+  //   } else {
+  //     alert(typeof(window.android));
+  //   }
+  // }
 
   // function callByAndroid() {
   //   console.log("callByAndroid")
@@ -53,10 +53,10 @@
     return "ok";
   }
 
-  function callByAndroidInteraction(msg) {
-    showElement(msg)
-    window.setTimeout(sendHelloToAndroid, 3000);
-  }
+  // function callByAndroidInteraction(msg) {
+  //   showElement(msg)
+  //   window.setTimeout(sendHelloToAndroid, 3000);
+  // }
 
   function showElement(msg) {
     var div = document.getElementById("div_box"); //获取div
