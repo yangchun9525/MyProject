@@ -5,7 +5,7 @@
 $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
   <mt-loadmore :top-method="refresh" :bottom-method="loadMore" ref="loadmore">
     <ul v-for="item in contentlist">
-      <li>
+      <li  @click="toDetail(item.weixin_url)">
         <div>
           <div class="title">
             <span style="height:35px">
@@ -13,7 +13,7 @@ $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$
           </span>
 
             <div style="height:35px">
-              <h2>{{ item.name }} </h2>
+              <h2>{{ item.name }}</h2>
             </div>
 
             <div style="margin-left:45px;margin-top:15px;">
@@ -48,6 +48,12 @@ export default {
     }
   },
   methods: {
+    toDetail(url){
+      // alert(url);
+      // window.location.href = url;
+      // window.open();
+      window.open(url, '_self');
+    },
     refresh() {
       this.refreshing = true;
       this.loadMore();

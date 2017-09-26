@@ -42,35 +42,23 @@ export default {
     // }
   },
   created() {
-    // axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded';
-    this.$jsonp('https://api.douban.com/v2/book/1220562').then(data => {
-      console.log(data);
-    }).map(item => {
-      return {
-        url: item.link,
-        img: item.pico[0].url,
-        title: item.title
-      }
+    axios.get('/douban/book/1220562').then(response1 => {
+      console.log("555555555555555555333333333:");
+      console.log(response1);
+      console.log("5555555555555555553333333333:");
+    }).catch(function(err) {
+      console.log(err);
+    });
+    this.$http({
+      url: '/douban/book/1220562',
+      method: 'GET'
+    }).then(response => {
+      console.log("11111111111111111111111:");
+      console.log(response);
+      console.log("11111111111111111111111:");
+    }).catch(function(response) {
+      console.log(response);
     })
-    // var url = 'https://api.douban.com/v2/book/1220562';
-    // this.$ajax({
-    //   url: '/douban/book/1220562',
-    //   method: 'get'
-    // }).then(function(data) {
-    //   console.log(data)
-    // }).catch(function(err) {
-    //   console.log(err)
-    // })
-    // this.$http({
-    //   url: 'https://api.douban.com/v2/book/1220562',
-    //   method: 'GET'
-    // }).then(response => {
-    //   console.log("11111111111111111111111:");
-    //   console.log(response);
-    //   console.log("11111111111111111111111:");
-    // }).catch(function(response) {
-    //   console.log(response);
-    // })
   }
 }
 </script>
