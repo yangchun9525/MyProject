@@ -1,21 +1,5 @@
-# my-project
-
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+http://blog.csdn.net/wu__di/article/details/54234894
+http://www.jianshu.com/p/5ba253651c3b
+1.按照以上两个链接安装环境
+2.在iview官网上下载脚手架创建项目
+3.用atom打开项目并修改使用的module，然后npm install -> npm run dev
